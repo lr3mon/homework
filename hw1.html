@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function quest0() {
+            
+            // 여기에 스크립트를 작성하세요
+            
+            time = prompt("초 단위 시간을 입력해주세요")
+            minutes = parseInt(time / 60)
+            seconds = time % 60
+        
+            console.log(minutes + "분 " + seconds + "초입니다.")
+        
+        }
+
+        function quest1() {
+            
+            // 여기에 스크립트를 작성하세요
+            
+            var p1 = []
+            var p2 = []
+            p1.push(prompt("첫 번째 점의 x좌표를 입력하세요"))
+            p1.push(prompt("첫 번째 점의 y좌표를 입력하세요"))
+            p2.push(prompt("두 번째 점의 x좌표를 입력하세요"))
+            p2.push(prompt("두 번째 점의 y좌표를 입력하세요"))
+            
+            let distance = getDist(p1, p2); // 반드시 이 코드를 이용하세요
+            console.log(distance);
+
+        }
+
+        function getDist() { // 입력 인자 설정 필요
+            
+            // 여기에 스크립트를 작성하세요
+            
+            z = (p1[0]-p2[0])**2 + (p1[1]-p2[1])**2
+            z = z**0.5
+            return z
+            
+        }
+
+        function quest2(str) {  
+            
+            // 여기에 스크립트를 작성하세요
+            
+            upper_str = str.toUpperCase()
+            console.log(upper_str)
+            
+        }
+
+        function quest3() {
+            
+            // 여기에 스크립트를 작성하세요
+            
+            num1 = prompt("첫 번째 숫자를 입력하세요")
+            oper = prompt("연산자를 입력하세요")
+            num2 = prompt("두 번째 숫자를 입력하세요")
+
+            var answer = operate(num1, oper, num2); // 반드시 이 코드를 사용하세요
+            console.log("정답은 %d입니다.", answer);
+        }
+
+        function operate(num1, oper, num2) { // 반드시 이 함수를 이용하여 연산 결과를 계산하세요
+            
+            // 여기에 스크립트를 작성하세요
+            // 단, 반드시 switch 문을 활용하세요
+            
+            switch(oper){
+                case "+":
+                    answer = num1 + num2
+                    return answer
+                    break
+                case "-":
+                    answer = num1 - num2
+                    return answer
+                    break
+                case "/":
+                    answer = parseInt(num1 / num2)
+                    return answer
+                    break
+                case "*":
+                    answer = num1 * num2
+                    return answer
+                    break
+            }
+            
+        }
+
+        function quest4() {
+
+             // 여기에 스크립트를 작성하세요
+             
+             user = prompt("가위 바위 보!")
+             computer = Math.floor(Math.random() * 3)
+             result = "사용자 결과"
+             computer_result = "컴퓨터 결과"
+
+             win = "사용자 승리"
+             draw = "무승부"
+             lose = "컴퓨터 승리"
+             
+             if (user == "가위"){
+                 if (computer == 0){
+                     result = draw
+                 }
+                 else if (computer == 1){
+                     result = lose
+                 }
+                 else {
+                     result = win
+                 }
+                 }
+             else if (user == "바위"){
+                 if (computer == 0){
+                     result = win
+                 }
+                 else if (computer == 1){
+                     result = draw
+                 }
+                 else {
+                     result = lose
+                 }
+                             
+                 }
+             else {
+                 if (computer == 0){
+                     result = lose
+                 }
+                 else if (computer == 1){
+                     result = win
+                 }
+                 else {
+                     result = draw
+                             
+                 }
+                 }
+             
+             if (computer == 0){
+                 computer_result = "컴퓨터: 가위"
+             }
+             else if (computer == 1){
+                 computer_result = "컴퓨터: 바위"
+             }
+             else {
+                 computer_result = "컴퓨터: 보"
+             }
+             
+             console.log(computer_result)
+             console.log(result)
+             
+        }
+
+        function quest5() {
+            str = prompt('문자열을 입력하세요') // 반드시 이 코드를 사용하세요
+            console.log(myReverse(str));
+        }
+
+        function myReverse(str) {
+            
+            // 여기에 스크립트를 작성하세요
+            // 반드시 반복문을 이용하여 str의 내용을 뒤집으세요
+            
+            reverse_str = ''
+            for (i=str.length-1;i >= 0;i--){
+                reverse_str += str[i]
+            }
+            
+            return reverse_str
+            
+        }
+
+        function quest6() {
+            
+            // 여기에 스크립트를 작성하세요
+            
+            user = prompt("숫자를 입력하세요:")
+            while (user >= 0){
+                if (user % 2 == 1){
+                    console.log(user+"를 입력하셨네요.")
+                    user = prompt("숫자를 입력하세요:")
+                }
+                else {
+                    user = prompt("숫자를 입력하세요")
+                }
+
+            }
+            console.log("끝!")
+            
+        }
+
+        function quest7(){
+            
+            // 여기에 스크립트를 작성하세요
+
+            user = prompt("문자열을 입력해주세요")
+            str = user.split(" ")
+            var new_str = ""
+            for (i= 0; i <str.length; i ++){
+                new_str += str[i][0]
+            }
+            console.log(new_str)
+            
+        }
+
+        let testStr = 'My name is mymy. Your name is youryour. His name is hishis. Her name is herher. So, my, your, his, her, name will be mymyyouryourhishisherehr.';
+        
+        // 위 변수를 이용하여 quest8()함수를 실행하세요
+
+        function quest8(str){
+            
+            // 여기에 스크립트를 작성하세요
+            
+            str = str.split(" ")
+            str.sort()
+            for (i=0;i<str.length;i++){
+                console.log(str[i])
+
+            }
+            
+        }
+
+        let longStr = "Computer engineering has been rapidly changed than any other academic disciplines; these changes are immediately reflected in the industrial field.";
+        
+        // 위 변수를 이용하여 quest9()함수를 실행하세요
+
+        function quest9(str){
+            
+            // 여기에 스크립트를 작성하세요
+            
+            var new_str = {}
+            for (i in str){
+                if (str[i] == " " || str[i] == "." || str[i] == ";"){
+                    continue
+                }
+                else if (str[i] in new_str){
+                    new_str[str[i]] += 1
+                }
+                else {
+                    new_str[str[i]] = 1
+                }
+                }
+                console.log(new_str)
+            }
+            
+                        
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
